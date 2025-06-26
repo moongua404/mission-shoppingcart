@@ -7,7 +7,7 @@ public class InputTerminal implements Input {
 
     @Override
     public int getInt() {
-        return Integer.parseInt(Console.readLine());
+        return Integer.parseInt(Console.readLine().trim());
     }
 
     @Override

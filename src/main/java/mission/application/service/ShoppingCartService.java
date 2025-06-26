@@ -1,8 +1,9 @@
-package mission;
+package mission.application.service;
 
 
 import java.util.List;
 import java.util.stream.Stream;
+import mission.Config;
 import mission.application.domain.enums.MessageConstant;
 import mission.application.port.inport.Input;
 import mission.application.port.inport.LectureDatabase;
@@ -38,6 +39,7 @@ public class ShoppingCartService {
         int price = calculatePrice(lecturesIds);
         if (price <= budget) {
             logger.print(MessageConstant.OUTPUT_BUDGET_FIT_MESSAGE);
+            return;
         }
         logger.print(MessageConstant.OUTPUT_BUDGET_EXCESS_MESSAGE, price - budget);
     }
@@ -50,6 +52,7 @@ public class ShoppingCartService {
 
     private List<Integer> parseLecturesIdLine(String lectureIdLine) {
         return Stream.of(lectureIdLine.split(","))
+                .map(String::trim)
                 .map(Integer::parseInt)
                 .toList();
     }
