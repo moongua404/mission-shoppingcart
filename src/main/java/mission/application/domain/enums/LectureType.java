@@ -1,8 +1,6 @@
 package mission.application.domain.enums;
 
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public enum LectureType {
     DevOps("DevOps"), DBMS("DBMS"), Lang("Lang"), FW("F/W"), CS("CS");

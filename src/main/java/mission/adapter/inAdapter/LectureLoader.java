@@ -1,8 +1,6 @@
 package mission.adapter.inAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import mission.application.domain.Lecture;
 import mission.application.domain.enums.LectureType;
 import mission.application.port.inport.LectureDatabase;
