@@ -1,5 +1,6 @@
 package mission.application.domain;
 
+import java.util.List;
 import mission.application.domain.enums.LectureType;
 
 public class Lecture {
@@ -7,6 +8,8 @@ public class Lecture {
     String name;
     LectureType type;
     int cost;
+
+    public Lecture() {}
 
     public Lecture(int id, String name, LectureType type, int cost) {
         this.id = id;
@@ -29,5 +32,11 @@ public class Lecture {
 
     public int getCost() {
         return cost;
+    }
+
+    public int calculateCost(List<Lecture> lectures) {
+        return lectures.stream()
+                .map(Lecture::getCost)
+                .reduce(0, Integer::sum);
     }
 }

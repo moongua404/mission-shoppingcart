@@ -78,7 +78,7 @@ public class ShoppingCartService {
                 .entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
-                        entry -> entry.getValue().stream().mapToInt(Lecture::getCost).sum()
+                        entry -> entry.getKey().getLecture().calculateCost(entry.getValue())
                 ));
     }
 
